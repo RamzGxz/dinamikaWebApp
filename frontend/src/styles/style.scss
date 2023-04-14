@@ -1,0 +1,33 @@
+.btnLanding:hover {
+    background-color: #7586b5 !important;
+}
+
+.btnCV:hover {
+    background-color: #8ca0d7 !important;
+    color: white !important;
+}
+
+.columnService:hover {
+    .icons{
+        opacity: 0;
+        transition: all .5s;
+    }
+    p {
+        opacity: 1 !important;
+        transform: translateY() !important;
+        display: block;
+        padding: 0%;
+    }
+}
+
+.hoverPort:hover{
+    cursor: pointer;
+    .textHover{
+        opacity: 1 !important;
+    }
+}
+
+// .columnService{
+//     margin-left: 1px !important;
+//     margin-right: 1px !important;
+// }
