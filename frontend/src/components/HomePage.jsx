@@ -5,7 +5,15 @@ const HomePage = () =>{
     
     return(
         <div>
-            <Headers/>
+            <Headers act1='text-bg-primary'/>
+
+            <div className="vh-100" style={{
+                backgroundImage: 'url(/assets/back.jpg)',
+                backgroundPosition: 'center',
+                backgroundSize: 'cover'
+            }}>
+                
+            </div>
         </div>
     )
 }
