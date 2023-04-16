@@ -8,14 +8,14 @@ const Footer = () => {
                         <span>LOGO</span>
                     </div>
                     <div className="copyright">
-                        <p>developed and maintained by <a href="#" target="_blank">RamzGxZ</a></p>
+                        <p>developed and maintained by <a href="https://github.com/RamzGxz/dinamikaWebApp">RamzGxZ</a></p>
                     </div>
                     <div>
                         <ul className="d-flex gap-3 list-unstyled">
                             <li><a href="#"><i className="fa-brands fa-facebook fs-3" style={{
                                 color: '#8ca0d7',
                             }} /></a></li>
-                            <li><a href="#"><i className="fa-brands fa-github fs-3" style={{
+                            <li><a href="https://github.com/RamzGxz/dinamikaWebApp"><i className="fa-brands fa-github fs-3" style={{
                                 color: '#8ca0d7',
                             }} /></a></li>
                             <li><a href="#"><i className="fa-brands fa-whatsapp fs-3" style={{

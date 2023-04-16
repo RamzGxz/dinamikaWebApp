@@ -6,7 +6,7 @@ const Headers = (props) => {
 
     useEffect(() => {
         const handleScroll = () => {
-            setIsScrolled(window.scrollY > 100);
+            setIsScrolled(window.scrollY > 50);
         };
         window.addEventListener('scroll', handleScroll);
         return () => {
@@ -26,11 +26,9 @@ const Headers = (props) => {
     }, [isScrolled]);
     return (
         <div>
-            <nav className="navbar navbar-expand-lg navbar-light bg-transparent fixed-top" aria-label="Offcanvas navbar large" style={{
-                borderBottom: '1px solid grey'
-            }}>
+            <nav className="navbar navbar-expand-lg navbar-light bg-transparent fixed-top" aria-label="Offcanvas navbar large">
                 <div className="container-fluid ">
-                    <a className="navbar-brand p-0" href="#" style={{
+                    <a className="navbar-brand p-0 titleHead" href="/" style={{
                         fontFamily: 'Arvo, serif',
                         fontSize: 30,
                         fontWeight: 900
@@ -49,10 +47,10 @@ const Headers = (props) => {
                                     <a className={`nav-link ${props.act1} rounded-3`} aria-current="page" href="#">Home</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className={`nav-link ${props.act2}`} href="#">Contact</a>
+                                    <a className={`nav-link ${props.act2} rouded-3`} href="#contactPage">Contact</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className={`nav-link ${props.act3} `} href="#">Stock</a>
+                                    <a className={`nav-link ${props.act3} rounded-3`} href="#">Stock</a>
                                 </li>
                                 <li className="nav-item dropdown">
                                     <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">

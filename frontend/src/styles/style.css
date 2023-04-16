@@ -23,4 +23,70 @@
 }
 .hoverPort:hover .textHover {
   opacity: 1 !important;
+}
+
+.readMore {
+  border: 1px solid #8ca0d7;
+  color: #8ca0d7;
+}
+
+.readMore:hover {
+  color: white;
+  background-color: #8ca0d7;
+}
+
+@media (max-width: 576px) {
+  .titleHead {
+    font-size: 20px !important;
+  }
+  .navbar {
+    width: 100% !important;
+  }
+  .nav-item a {
+    color: black;
+  }
+  .nav-item a:hover {
+    color: #8ca0d7 !important;
+  }
+  .nav-item .active a {
+    color: white !important;
+  }
+  .titleHomePage .wel {
+    font-size: 50px !important;
+  }
+  .titleHomePage .din {
+    font-size: 25px !important;
+  }
+  .titleHomePage h4 {
+    font-size: 15px !important;
+  }
+  .titleHomePage .btnLanding {
+    width: 150px !important;
+    height: 50px !important;
+    margin-top: 20px !important;
+  }
+  .titleHomePage .btnLanding a {
+    font-size: 20px;
+  }
+  .pageAbout {
+    flex-direction: column !important;
+  }
+  .pageAbout .content {
+    margin-top: 10%;
+  }
+  .pageAbout .imageAbout {
+    width: 400px !important;
+  }
+  .colTesti {
+    margin-bottom: 3%;
+  }
+  .cardBlog {
+    flex-direction: column !important;
+  }
+  .cardBlog .imageBlog {
+    width: 100%;
+  }
+  .cardBlog .likes {
+    width: 100% !important;
+  }
 }/*# sourceMappingURL=style.css.map */

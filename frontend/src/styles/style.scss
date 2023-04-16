@@ -31,3 +31,81 @@
 //     margin-left: 1px !important;
 //     margin-right: 1px !important;
 // }
+
+.readMore{
+    border: 1px solid #8ca0d7;
+    color: #8ca0d7;
+}
+
+.readMore:hover{
+    color: white;
+    background-color: #8ca0d7;
+}
+
+@media (max-width: 576px) {
+    .titleHead{
+        font-size: 20px !important;
+    }
+
+    .navbar{
+        width: 100% !important;
+    }
+
+    .nav-item{
+        a{
+            color: black ;
+        }
+        a:hover{
+            color: #8ca0d7 !important;
+        }
+        .active{
+            a{
+                color: white !important;
+            }
+        }
+    }
+
+    .titleHomePage{
+        .wel{
+            font-size: 50px !important;
+        }
+        .din{
+            font-size: 25px !important;
+        }
+        h4{
+            font-size: 15px !important;
+        }
+
+        .btnLanding{
+            width: 150px !important;
+            height: 50px !important;
+            margin-top: 20px !important;
+            a{
+                font-size: 20px;
+            }
+        }
+
+    }
+    .pageAbout{
+        flex-direction: column !important;
+        .content{
+            margin-top: 10%;
+        }
+        .imageAbout{
+            width: 400px !important;
+        }
+    }
+    .colTesti{
+        margin-bottom: 3%;
+    }
+
+    .cardBlog{
+        flex-direction: column !important;
+        .imageBlog{
+            width: 100%;
+        }
+        .likes{
+            width: 100% !important;
+        }
+    }
+}
