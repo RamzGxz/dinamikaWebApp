@@ -24,6 +24,7 @@ const Headers = (props) => {
             navbar.classList.remove('bg-dark', 'navbar-dark');
         }
     }, [isScrolled]);
+    
     return (
         <div>
             <nav className="navbar navbar-expand-lg navbar-light bg-transparent fixed-top" aria-label="Offcanvas navbar large">
@@ -42,27 +43,23 @@ const Headers = (props) => {
                             <button type="button" className="btn-close btn-close-black" data-bs-dismiss="offcanvas" aria-label="Close" />
                         </div>
                         <div className="offcanvas-body">
-                            <ul className="navbar-nav justify-content-end flex-grow-1 pe-5 text-uppercase fw-medium">
+                            <ul className="navbar-nav justify-content-end flex-grow-1 pe-2 text-uppercase fw-medium">
                                 <li className="nav-item">
-                                    <a className={`nav-link ${props.act1} rounded-3`} aria-current="page" href="#">Home</a>
+                                    <a className={`nav-link ${props.act1} rounded-3`} aria-current="page" href="/">Home</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className={`nav-link ${props.act2} rouded-3`} href="#contactPage">Contact</a>
+                                    <a className={`nav-link rouded-3`} href="/#contactPage">Contact</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className={`nav-link ${props.act3} rounded-3`} href="#">Stock</a>
+                                    <a className={`nav-link ${props.act2} rounded-3`} href="/stock">Stock</a>
                                 </li>
-                                <li className="nav-item dropdown">
-                                    <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <li className="nav-item ">
+                                    <a className="nav-link" href="/admin/dashboard">
                                         Admin
                                     </a>
-                                    <ul className="dropdown-menu text-capitalize">
-                                        <li><a className="dropdown-item" href="#">Dasboard</a></li>
-                                        <li><a className="dropdown-item" href="#">Recap</a></li>
-                                    </ul>
                                 </li>
                             </ul>
-                            <a href="" className="btn btn-success me-3">LOGIN</a>
+                            <a href="" className="btn btn-success">LOGIN</a>
                         </div>
                     </div>
                 </div>

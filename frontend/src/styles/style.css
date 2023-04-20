@@ -68,6 +68,23 @@
   .titleHomePage .btnLanding a {
     font-size: 20px;
   }
+  .titleStockPage .wel {
+    font-size: 50px !important;
+  }
+  .titleStockPage .din {
+    font-size: 25px !important;
+  }
+  .titleStockPage h4 {
+    font-size: 15px !important;
+  }
+  .titleStockPage .btnLanding {
+    width: 150px !important;
+    height: 50px !important;
+    margin-top: 20px !important;
+  }
+  .titleStockPage .btnLanding a {
+    font-size: 20px;
+  }
   .pageAbout {
     flex-direction: column !important;
   }
@@ -89,4 +106,66 @@
   .cardBlog .likes {
     width: 100% !important;
   }
+}
+.sideBar .nav-link:hover {
+  color: #8ca0d7 !important;
+  cursor: pointer;
+}
+.sideBar .dropdown-item:hover {
+  color: #8ca0d7 !important;
+}
+
+.formUpdate {
+  width: 100%;
+  height: 100vh;
+  z-index: 9999;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgba(25, 9, 51, 0.5);
+  opacity: 0;
+  transition: opacity 0.5s;
+  visibility: hidden;
+}
+.formUpdate form {
+  width: 35%;
+  height: 60vh;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 10px;
+  position: absolute;
+}
+.formUpdate form i {
+  position: absolute;
+  top: 1%;
+  right: 10px;
+  color: #8ca0d7;
+}
+.formUpdate form i:hover {
+  cursor: pointer;
+  color: #db5461;
+}
+
+.search-results {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: #8ca0d7;
+  z-index: 99999999;
+  color: white;
+  max-height: 20vh;
+  overflow-y: scroll !important;
+}
+
+.selected {
+  background-color: #8ca0d7 !important;
+  margin-top: 4rem !important;
 }/*# sourceMappingURL=style.css.map */
