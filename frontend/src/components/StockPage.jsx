@@ -14,6 +14,7 @@ const StockPage = () => {
         } catch (error) {
             console.log(error)
             alert(error)
+            location.reload()
         }
     })
 

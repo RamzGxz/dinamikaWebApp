@@ -218,3 +218,16 @@
     background-color: #8ca0d7 !important;
     margin-top: 4rem !important;
 }
+
+.contentWrapper{
+    transition: all ease-in-out .3s;
+    div{
+        i:hover{
+            cursor: pointer;
+        }
+    }
+}
+
+.sideBar{
+    transition: all ease-in-out .3s;
+}

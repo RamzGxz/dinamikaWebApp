@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useRef, useState } from "react"
 import Sidebar from "./Sidebar"
 import TableStock from "./TableStock"
+import TodoList from "./TodoList"
 
 const AdminDashboard = () => {
     const [jumlahStock, setJumlahStock] = useState([])
@@ -19,15 +20,61 @@ const AdminDashboard = () => {
         fetchJumlahStock()
     }, [])
 
+    let sideClick = 0
+    const handleClickSideBar = () => {
+        const sideElement = document.querySelectorAll('.sideBar')
+        const contentElement = document.querySelectorAll('.contentWrapper')
+        const textSide = document.querySelectorAll('.text')
+        const iconSide = document.querySelectorAll('.iconSide')
+        const active = document.querySelectorAll('.active')
+        sideClick++
+        console.log(sideClick)
+        if (sideClick === 1) {
+            sideElement.forEach((el) => {
+                el.style.width = '0px'
+            })
+            contentElement.forEach((el) => {
+                el.style.marginLeft = '31px'
+            })
+            textSide.forEach((el) => {
+                el.classList.add('d-none')
+            })
+            iconSide.forEach((el) => {
+                el.classList.remove('fs-6')
+                el.classList.add('fs-4')
+            })
+            
+        } else {
+            sideElement.forEach((el) => {
+                el.style.width = '240px'
+            })
+            contentElement.forEach((el) => {
+                el.style.marginLeft = '240px'
+            })
+            textSide.forEach((el) => {
+                el.classList.remove('d-none')
+            })
+            iconSide.forEach((el) => {
+                el.classList.add('fs-6')
+                el.classList.remove('fs-4')
+            })
+            
+            sideClick = 0
+        }
+    }
+
     return (
         <div>
-            <Sidebar />
+            <Sidebar sideAct1='active' />
             <div className="contentWrapper py-4" style={{
                 marginLeft: 240,
                 backgroundColor: '#c8e0f4'
             }}>
                 <div className="w-100 d-flex justify-content-between align-items-center mb-3 container">
-                    <h1 className="fw-bolder">Dashboard</h1>
+                    <div className="d-flex justify-content-center align-items-center">
+                        <i className="fa-solid fa-bars fs-4 me-3 p-1" onClick={handleClickSideBar}></i>
+                        <h1 className="fw-bolder">Dashboard</h1>
+                    </div>
                     <h5>
                         <a href="/" className="text-decoration-none">Home  </a>
                         / Dashboard
@@ -125,6 +172,10 @@ const AdminDashboard = () => {
                 </div>
                 <TableStock />
 
+                <div className="d-flex align-items-center container">
+                    <TodoList />
+                    
+                </div>
             </div>
         </div>
     )

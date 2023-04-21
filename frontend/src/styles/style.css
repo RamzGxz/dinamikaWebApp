@@ -168,4 +168,15 @@
 .selected {
   background-color: #8ca0d7 !important;
   margin-top: 4rem !important;
+}
+
+.contentWrapper {
+  transition: all ease-in-out 0.3s;
+}
+.contentWrapper div i:hover {
+  cursor: pointer;
+}
+
+.sideBar {
+  transition: all ease-in-out 0.3s;
 }/*# sourceMappingURL=style.css.map */
