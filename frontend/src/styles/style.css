@@ -106,7 +106,40 @@
   .cardBlog .likes {
     width: 100% !important;
   }
+  .iconTitle {
+    flex-direction: column;
+  }
+  .iconTitle .iconDash {
+    width: 100% !important;
+    margin-bottom: 5px;
+  }
+  .searchWrapper {
+    flex-direction: column !important;
+  }
+  .searchWrapper .formSearch {
+    margin-top: 2%;
+    margin-bottom: 2%;
+  }
+  .formUpdate form {
+    width: 90% !important;
+  }
+  .titleLink i {
+    font-size: 20px !important;
+  }
+  .titleLink h1 {
+    font-size: 20px;
+  }
+  .titleLink h5 {
+    font-size: 18px;
+  }
 }
+.titleLink i {
+  font-size: 30px;
+}
+.titleLink i:hover {
+  font-size: 40px !important;
+}
+
 .sideBar .nav-link:hover {
   color: #8ca0d7 !important;
   cursor: pointer;
@@ -179,4 +212,14 @@
 
 .sideBar {
   transition: all ease-in-out 0.3s;
+}
+
+.myCalendar {
+  width: 100%;
+  height: auto;
+  font-size: 16px;
+  color: #333;
+  border: 1px solid #ccc;
+  padding: 10px;
+  transition: all 0.3s;
 }/*# sourceMappingURL=style.css.map */

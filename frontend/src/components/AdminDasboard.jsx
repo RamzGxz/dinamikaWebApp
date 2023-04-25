@@ -2,6 +2,10 @@ import React, { useCallback, useEffect, useRef, useState } from "react"
 import Sidebar from "./Sidebar"
 import TableStock from "./TableStock"
 import TodoList from "./TodoList"
+import { Link } from "react-router-dom"
+import Calendar from 'react-calendar';
+import 'react-calendar/dist/Calendar.css'
+
 
 const AdminDashboard = () => {
     const [jumlahStock, setJumlahStock] = useState([])
@@ -26,9 +30,9 @@ const AdminDashboard = () => {
         const contentElement = document.querySelectorAll('.contentWrapper')
         const textSide = document.querySelectorAll('.text')
         const iconSide = document.querySelectorAll('.iconSide')
-        const active = document.querySelectorAll('.active')
+        
         sideClick++
-        console.log(sideClick)
+        
         if (sideClick === 1) {
             sideElement.forEach((el) => {
                 el.style.width = '0px'
@@ -43,7 +47,7 @@ const AdminDashboard = () => {
                 el.classList.remove('fs-6')
                 el.classList.add('fs-4')
             })
-            
+
         } else {
             sideElement.forEach((el) => {
                 el.style.width = '240px'
@@ -58,7 +62,7 @@ const AdminDashboard = () => {
                 el.classList.add('fs-6')
                 el.classList.remove('fs-4')
             })
-            
+
             sideClick = 0
         }
     }
@@ -70,22 +74,24 @@ const AdminDashboard = () => {
                 marginLeft: 240,
                 backgroundColor: '#c8e0f4'
             }}>
-                <div className="w-100 d-flex justify-content-between align-items-center mb-3 container">
+                <div className="w-100 d-flex justify-content-between align-items-center mb-3 container titleLink">
                     <div className="d-flex justify-content-center align-items-center">
-                        <i className="fa-solid fa-bars fs-4 me-3 p-1" onClick={handleClickSideBar}></i>
-                        <h1 className="fw-bolder">Dashboard</h1>
+                        <i className="fa-solid fa-bars me-3" onClick={handleClickSideBar} id="iconToggle" style={{
+                            transition: 'all .2s'
+                        }}></i>
+                        <h1 className="fw-bolder mb-0 ">Dashboard</h1>
                     </div>
-                    <h5>
-                        <a href="/" className="text-decoration-none">Home  </a>
+                    <h5 className="mb-0">
+                        <Link to="/" className="text-decoration-none">Home  </Link>
                         / Dashboard
                     </h5>
                 </div>
                 <div className="iconTitle d-flex container justify-content-between align-items-center m-auto mb-3">
-                    <div className="d-flex align-items-center flex-row rounded-3 justify-content-between p-2" style={{
+                    <div className="d-flex align-items-center flex-row rounded-3 justify-content-between p-2 iconDash" style={{
                         backgroundColor: 'white',
                         width: '23%',
                     }}>
-                        <div className="d-flex justify-content-center align-items-center flex-column ms-3">
+                        <div className="d-flex justify-content-center align-items-center flex-column amount w-50">   
                             {jumlahStock.map((data) => {
                                 return (
                                     <h2 className="mb-0" style={{
@@ -106,11 +112,11 @@ const AdminDashboard = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="d-flex align-items-center flex-row rounded-3 justify-content-between p-2" style={{
+                    <div className="d-flex align-items-center flex-row rounded-3 justify-content-between p-2 iconDash" style={{
                         backgroundColor: 'white',
                         width: '23%',
                     }}>
-                        <div className="d-flex justify-content-center align-items-center flex-column ms-3">
+                        <div className="d-flex justify-content-center align-items-center flex-column amount w-50"   >
                             <h2 className="mb-0" style={{
                                 fontFamily: 'Arvo, serif',
                                 color: '#8ca0d7'
@@ -127,11 +133,11 @@ const AdminDashboard = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="d-flex align-items-center flex-row rounded-3 justify-content-between p-2" style={{
+                    <div className="d-flex align-items-center flex-row rounded-3 justify-content-between p-2 iconDash" style={{
                         backgroundColor: 'white',
                         width: '23%',
                     }}>
-                        <div className="d-flex justify-content-center align-items-center flex-column ms-3">
+                        <div className="d-flex justify-content-center align-items-center flex-column amount w-50"   >
                             <h2 className="mb-0" style={{
                                 fontFamily: 'Arvo, serif',
                                 color: '#8ca0d7'
@@ -148,11 +154,11 @@ const AdminDashboard = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="d-flex align-items-center flex-row rounded-3 justify-content-between p-2" style={{
+                    <div className="d-flex align-items-center flex-row rounded-3 justify-content-between p-2 iconDash" style={{
                         backgroundColor: 'white',
                         width: '23%',
                     }}>
-                        <div className="d-flex justify-content-center align-items-center flex-column ms-3">
+                        <div className="d-flex justify-content-center align-items-center flex-column amount w-50"   >
                             <h2 className="mb-0" style={{
                                 fontFamily: 'Arvo, serif',
                                 color: '#8ca0d7'
@@ -170,10 +176,20 @@ const AdminDashboard = () => {
                         </div>
                     </div>
                 </div>
-                <TableStock />
+                <TableStock searchWrapper='searchWrapper'/>
 
-                <div className="d-flex align-items-center container">
-                    <TodoList />
+                <div className="row container m-auto">
+                    <div className="col-sm-12 col-lg-6 " style={{
+                        marginBottom: 10
+                    }}>
+                        <TodoList />
+                    </div>
+                    <div className="col-sm-12 col-lg-6">
+                        <Calendar className={`myCalendar rounded-3`}/>
+                    </div>
+                </div>
+
+                <div className="container">
                     
                 </div>
             </div>

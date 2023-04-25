@@ -24,9 +24,9 @@ const Sidebar = (props) => {
                             <p className="mb-0 ">Recap</p>
                         </Link>
                         <ul className="dropdown-menu dropdown-menu-dark text-small shadow">
-                            <li><Link className="dropdown-item" to="#">Recap Harian</Link></li>
-                            <li><Link className="dropdown-item" to="#">Recap Mingguan</Link></li>
-                            <li><Link className="dropdown-item" to="#">Recap Tahunan</Link></li>
+                            <li><Link className={`dropdown-item ${props.sideAct2}`} to="#">Recap Harian</Link></li>
+                            <li><Link className={`dropdown-item ${props.sideAct3}`} to="#">Recap Mingguan</Link></li>
+                            <li><Link className={`dropdown-item ${props.sideAct4}`} to="#">Recap Tahunan</Link></li>
                         </ul>
                     </li>
                     <li>

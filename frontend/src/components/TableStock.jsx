@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useRef, useState } from "react"
 
-const TableStock = () => {
+const TableStock = (props) => {
     // setStockTable
     const [stockaTable, setStockTable] = useState([])
 
@@ -195,7 +195,7 @@ const TableStock = () => {
         })
     }
 
-    const reload = (e) =>{
+    const reload = (e) => {
         e.preventDefault()
         location.reload()
     }
@@ -203,7 +203,7 @@ const TableStock = () => {
     return (
         <div className="">
             <div className="tableStockDashboard container mt-5 mb-5">
-                <div className="w-100 container justify-content-between d-flex align-items-center mb-3">
+                <div className={`w-100 container justify-content-between d-flex align-items-center mb-3 ${props.searchWrapper}`}>
                     <h4 className="mb-0">Stock Table</h4>
 
                     <div className="formSearch position-relative" onSubmit={reload}>
@@ -227,7 +227,7 @@ const TableStock = () => {
                                         return (
                                             <button
                                                 className={`btn btn-light mb-1 btn-sm`}
-                                                onClick={() => viewDataScrollStock(result.id)}
+                                                onClick={(e) => viewDataScrollStock(result.id)}
                                             >{result.namaBrg}</button>
                                         )
                                     })}
@@ -273,8 +273,12 @@ const TableStock = () => {
                                         <td>{data.tanggal}</td>
                                         <td>
                                             <div className="btn-group btn-group-sm" role="group" aria-label="Basic mixed styles example">
-                                                <button type="button" className="btn btn-outline-danger" onClick={() => { deleteStock(data.id) }}>Delete</button>
-                                                <button type="button" className="btn btn-outline-success" onClick={() => updateStock(data.id)}>Update</button>
+                                                <button type="button" className="btn btn-outline-success" onClick={() => updateStock(data.id)}>
+                                                    <i className="fa-solid fa-pen-to-square"></i>
+                                                </button>
+                                                <button type="button" className="btn btn-outline-danger" onClick={() => { deleteStock(data.id) }}>
+                                                    <i className="fa-solid fa-trash"></i>
+                                                </button>
                                             </div>
                                         </td>
                                     </tr>

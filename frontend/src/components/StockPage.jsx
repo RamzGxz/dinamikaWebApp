@@ -4,6 +4,11 @@ import Headers from "./Headers"
 
 
 const StockPage = () => {
+    const [likes, setLikes] = useState(10)
+    const [comments, setComments] = useState(5)
+    const [likes2, setLikes2] = useState(26)
+    const [comments2, setComments2] = useState(15)
+
     const [stockData, setStockData] = useState([])
 
     const fetchData = useCallback(async () => {
@@ -117,6 +122,8 @@ const StockPage = () => {
                         }}>News</h1>
                         <p className="lead text-body-secondary">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
                     </div>
+
+                    
                 </div>
 
                 <div className=""></div>
