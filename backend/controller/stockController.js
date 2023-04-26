@@ -1,12 +1,17 @@
 const conn = require('../db/db')
 
-
+const viewResult = (data) => {
+    const result = JSON.stringify(data)
+    const parsed = JSON.parse(result)
+    console.log(`200    get data succesful! length: ${parsed.length}`)
+}
 module.exports = {
     getDataStock: (req, res) => {
         const query = 'select * from stock'
         conn.query(query, (err, data) => {
             if (err) throw err
             res.send(data)
+            viewResult(data)
         })
     },
     getStockById: (req, res) => {
@@ -15,6 +20,7 @@ module.exports = {
         conn.query(query, (err, data) => {
             if (err) throw err
             res.send(data)
+            viewResult(data)
         })
     },
     updateStock: (req, res) => {
@@ -24,7 +30,7 @@ module.exports = {
         const hargaBrgVal = req.body.hargaBrg
         const jumlahBrgVal = req.body.jumlahBrg
         const query = `update stock set kodeBrg='${kodeBrgVal}', namaBrg='${namaBrgVal}', hargaBrg=${hargaBrgVal}, jumlahBrg=${jumlahBrgVal} where id=${id}`
-        conn.query(query, (err) => {
+        conn.query(query, (err, data) => {
             if (err) throw err
             res.send({ message: 'data updated!' })
         })
@@ -44,15 +50,15 @@ module.exports = {
             res.send(data)
         })
     },
-    postStock: (req, res)=>{
+    postStock: (req, res) => {
         const kodeBrgVal = req.body.kodeBrg
         const namaBrgVal = req.body.namaBrg
         const hargaBrgVal = req.body.hargaBrg
         const jumlahBrgVal = req.body.jumlahBrg
         const query = `insert into stock(kodeBrg, namaBrg, hargaBrg, jumlahBrg) values ('${kodeBrgVal}', '${namaBrgVal}', ${hargaBrgVal}, ${jumlahBrgVal})`
 
-        conn.query(query, (err)=>{
-            if(err) throw err
+        conn.query(query, (err) => {
+            if (err) throw err
             res.send('data posted!')
         })
     }
