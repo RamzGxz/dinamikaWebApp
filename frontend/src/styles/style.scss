@@ -192,6 +192,7 @@
 }
 
 .sideBar {
+    transition: all ease-in-out .3s;
     .nav-link:hover {
         color: #8ca0d7 !important;
         cursor: pointer;
@@ -285,4 +286,35 @@
     border: 1px solid #ccc;
     padding: 10px;
     transition: all .3s;
+}
+
+.loginForm{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    z-index: 9999999999;
+    opacity: 0;
+    background-color: rgba($color: #f7f7f7, $alpha: 0.5);
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    transition: opacity 0.75s;
+    visibility: hidden;
+    .formWrapper{
+        background-color: white;
+        input:focus{
+            outline:  none !important;
+        }
+        input{
+            color: #333;
+        }
+    }
+}
+
+.visiblePass:hover{
+    cursor: pointer;
+}
+
+.offcanvas{
+    overflow: auto !important;
 }

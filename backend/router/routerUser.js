@@ -6,4 +6,4 @@ routerUser.get('/getUser', userController.getuser)
 routerUser.post('/login',userController.login)
 
 
-module.exports = routerUsers
+module.exports = routerUser

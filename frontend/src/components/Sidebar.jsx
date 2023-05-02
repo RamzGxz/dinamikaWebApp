@@ -1,7 +1,12 @@
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
 const Sidebar = (props) => {
+    const navigate = useNavigate()
 
+    const logout = () => {
+        navigate('/')
+        localStorage.removeItem('isLoggedIn')
+    }
     return (
         <div>
             <div className="d-flex flex-column flex-shrink-0 p-3 text-bg-dark vh-100 sideBar position-fixed" style={{ width: 240 }}>
@@ -43,7 +48,7 @@ const Sidebar = (props) => {
                         <strong className="">mdo</strong>
                     </a>
                     <ul className="dropdown-menu dropdown-menu-dark text-small shadow">
-                        <li><a className="dropdown-item" href="#">Sign out</a></li>
+                        <li><a className="dropdown-item" href="#" onClick={logout}>Sign out</a></li>
                     </ul>
                 </div>
             </div>

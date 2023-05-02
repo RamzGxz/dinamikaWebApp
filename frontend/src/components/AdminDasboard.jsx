@@ -20,6 +20,8 @@ const AdminDashboard = () => {
         }
     })
 
+    
+
     useEffect(() => {
         fetchJumlahStock()
     }, [])
@@ -36,9 +38,12 @@ const AdminDashboard = () => {
         if (sideClick === 1) {
             sideElement.forEach((el) => {
                 el.style.width = '0px'
+                setTimeout(()=>{
+                    el.classList.add('d-none')
+                }, 300)
             })
             contentElement.forEach((el) => {
-                el.style.marginLeft = '31px'
+                el.style.marginLeft = '0px'
             })
             textSide.forEach((el) => {
                 el.classList.add('d-none')
@@ -51,18 +56,21 @@ const AdminDashboard = () => {
         } else {
             sideElement.forEach((el) => {
                 el.style.width = '240px'
+                el.classList.remove('d-none')
+               
             })
             contentElement.forEach((el) => {
                 el.style.marginLeft = '240px'
             })
             textSide.forEach((el) => {
-                el.classList.remove('d-none')
+                setTimeout(()=>{
+                    el.classList.remove('d-none')
+                }, 300)
             })
             iconSide.forEach((el) => {
                 el.classList.add('fs-6')
                 el.classList.remove('fs-4')
             })
-
             sideClick = 0
         }
     }
@@ -97,7 +105,7 @@ const AdminDashboard = () => {
                                     <h2 className="mb-0" style={{
                                         fontFamily: 'Arvo, serif',
                                         color: '#8ca0d7'
-                                    }}>{data.total}</h2>
+                                    }} key={data.id}>{data.total}</h2>
                                 )
                             })}
                             <p className="mb-0">Stock</p>

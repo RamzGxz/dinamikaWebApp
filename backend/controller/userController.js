@@ -1,6 +1,4 @@
 const conn = require('../db/db')
-const jwt = require('jsonwebtoken')
-const secretKey = 'dinamikaWebApp'
 
 module.exports = {
     getuser: (req, res) => {
@@ -17,15 +15,16 @@ module.exports = {
         conn.query(query, (err, data) => {
             if (err) return res.send(err)
             if (data.length === 1) {
-                const token = jwt.sign({username: username }, secretKey)
                 res.status(200).send({
                     pesan: "login berhasil",
-                    token: token
+                    data: data
                 })
+                console.log('login success!')
             } else {
                 res.status(401).send({
                     pesan: "maaf username atau password salah"
                 })
+                console.log('login error!')
             }
         })
     }

@@ -5,7 +5,7 @@ const Footer = () => {
             <footer className="container p-4 rounded">
                 <div className="d-lg-flex justify-content-between">
                     <div>
-                        <span>LOGO</span>
+                        <span>Logo</span>
                     </div>
                     <div className="copyright">
                         <p>developed and maintained by <a href="https://github.com/RamzGxz/dinamikaWebApp">RamzGxZ</a></p>

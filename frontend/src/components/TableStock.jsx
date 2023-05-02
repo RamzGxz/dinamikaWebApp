@@ -264,6 +264,7 @@ const TableStock = (props) => {
                                     <tr
                                         id={`dataStock${data.id}`}
                                         className="mt-5"
+                                        key={data.id}
                                     >
                                         <th scope="row" key={data.id}>{index + 1}</th>
                                         <td>{data.kodeBrg}</td>
