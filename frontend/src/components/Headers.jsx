@@ -8,26 +8,26 @@ const Headers = (props) => {
     useEffect(() => {
         const handleScroll = () => {
             setIsScrolled(window.scrollY > 50);
-        };
-        window.addEventListener('scroll', handleScroll);
+        }
+        window.addEventListener('scroll', handleScroll)
         return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
+            window.removeEventListener('scroll', handleScroll)
+        }
+    }, [])
 
     useEffect(() => {
         const navbar = document.querySelector('.navbar');
         const btnLogout = document.querySelector('.btnLogout')
         if (isScrolled) {
-            navbar.classList.add('bg-dark', 'navbar-dark');
-            navbar.classList.remove('bg-transparent');
+            navbar.classList.add('bg-dark', 'navbar-dark')
+            navbar.classList.remove('bg-transparent')
             if (btnLogout) {
                 btnLogout.classList.remove('btn-outline-danger')
                 btnLogout.classList.add('btn-danger')
             }
         } else {
-            navbar.classList.add('bg-transparent');
-            navbar.classList.remove('bg-dark', 'navbar-dark');
+            navbar.classList.add('bg-transparent')
+            navbar.classList.remove('bg-dark', 'navbar-dark')
             if (btnLogout) {
                 btnLogout.classList.remove('btn-danger')
                 btnLogout.classList.add('btn-outline-danger')
@@ -43,13 +43,13 @@ const Headers = (props) => {
     const [user, setUser] = useState({})
 
     useEffect(() => {
-        localStorage.setItem('isLoggedIn', isLogin);
-    }, [isLogin]);
+        localStorage.setItem('isLoggedIn', isLogin)
+    }, [isLogin])
 
     useEffect(() => {
-        const storedUser = localStorage.getItem('user');
+        const storedUser = localStorage.getItem('user')
         if (storedUser) {
-            setUser(JSON.parse(storedUser));
+            setUser(JSON.parse(storedUser))
         }
     }, [])
 
@@ -129,8 +129,12 @@ const Headers = (props) => {
     }
 
     const hideOffcanvas = () => {
-        document.querySelector('.offcanvas').classList.remove('show')
-        document.querySelector('.offcanvas-backdrop').classList.remove('show')
+        const offcanvas = document.querySelector('.offcanvas')
+        const backdrop = document.querySelector('.offcanvas-backdrop')
+        if (offcanvas && backdrop) {
+            offcanvas.classList.remove('show')
+            backdrop.classList.remove('show')
+        }
     }
 
     const handleClickLogin = () => {
@@ -164,7 +168,7 @@ const Headers = (props) => {
                         <div className="offcanvas-body position-relative">
                             <ul className="navbar-nav justify-content-end flex-grow-1 text-uppercase fw-medium">
                                 <li className="nav-item">
-                                    <Link to='/' className={`nav-link ${props.act1} rounded-3`} aria-current="page" onClick={hideOffcanvas}>Home</Link>
+                                    <Link to='/' className={`nav-link ${props.act1} rounded-3`} onClick={hideOffcanvas}>Home</Link>
                                 </li>
                                 <li className="nav-item">
                                     <a href='/#contactPage' className={`nav-link rouded-3`} onClick={hideOffcanvas}>Contact</a>
@@ -244,7 +248,7 @@ const Headers = (props) => {
                     </div>
                 </div>
             </div>
-            
+
         </div>
     )
 }

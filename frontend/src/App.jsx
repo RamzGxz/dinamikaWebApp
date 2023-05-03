@@ -1,19 +1,20 @@
 import AdminDashboard from './components/AdminDasboard'
 import HomePage from './components/HomePage'
 import StockPage from './components/StockPage'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom"
 
 function App() {
-  
+  const router = createBrowserRouter([
+    { path: "/", element: <HomePage /> },
+    { path: "/stock", element: <StockPage /> },
+    { path: "/admin/dashboard", element: <AdminDashboard /> },
+  ])
   return (
     <div>
-      <Router>
-        <Routes>
-          <Route path='/' element = {<HomePage/>}/>
-          <Route path='/stock' element = {<StockPage/>}/>
-          <Route path='/admin/dashboard' element = {<AdminDashboard/>}/>
-        </Routes>
-      </Router>
+      <RouterProvider router={router} />
     </div>
   )
 }
