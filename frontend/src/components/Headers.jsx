@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from "react"
 import { Link } from "react-router-dom";
+import Alerts from "./Alerts";
 
 
 const Headers = (props) => {
@@ -54,7 +55,10 @@ const Headers = (props) => {
     }, [])
 
     const handleClickLogout = () => {
-        setIsLogin(false)
+        const conn = confirm('are you sure want to leave?')
+        if(conn){
+            setIsLogin(false)
+        }
     }
 
     const handleClose = () => {
@@ -249,6 +253,7 @@ const Headers = (props) => {
                 </div>
             </div>
 
+            <Alerts/>
         </div>
     )
 }

@@ -24,6 +24,7 @@ const TodoList = () => {
 
     const text = useRef(null)
     const handleSubmit = useCallback(async () => {
+        e.preventDefault()
         const textVal = text.current.value
         if (!textVal) {
             alert('Text tidak boleh kosong!')
