@@ -16,5 +16,5 @@ app.use(routerTodo)
 app.use(routerUser)
 
 app.listen(port,()=>{
-    console.log(`server listed on http://localhost:${port}`)
+    console.log(`server listed on local: http://localhost:${port}`)
 })
